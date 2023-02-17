@@ -39,6 +39,7 @@ public class Klick extends Canvas implements Runnable{
 
     public void draw(Graphics g) {
         g.clearRect(0,0,getWidth(),getHeight());
+
     }
 
     private void update() {
