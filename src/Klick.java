@@ -9,6 +9,9 @@ public class Klick extends Canvas implements Runnable{
     private boolean running = false;
     private Thread thread;
 
+
+    int x = 100;
+    int y = 100;
     public Klick() {
         setSize(600,400);
         JFrame frame = new JFrame();
@@ -39,6 +42,8 @@ public class Klick extends Canvas implements Runnable{
 
     public void draw(Graphics g) {
         g.clearRect(0,0,getWidth(),getHeight());
+    g.setColor(Color.red);
+    g.fillRect(x,y,30,30);
 
     }
 
@@ -101,6 +106,8 @@ public class Klick extends Canvas implements Runnable{
 
         @Override
         public void mouseClicked(MouseEvent e) {
+            x=200;
+            y=200;
         }
 
         @Override
