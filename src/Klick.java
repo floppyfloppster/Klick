@@ -1,7 +1,12 @@
+import com.sun.org.apache.bcel.internal.generic.NEW;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.awt.image.BufferStrategy;
+import java.util.Random;
+
+import static java.lang.Math.random;
 
 public class Klick extends Canvas implements Runnable{
     private BufferStrategy bs;
@@ -13,7 +18,7 @@ public class Klick extends Canvas implements Runnable{
     int x = 100;
     int y = 100;
     public Klick() {
-        setSize(600,400);
+        setSize(600,600);
         JFrame frame = new JFrame();
         frame.add(this);
         frame.addKeyListener(new MyKeyListener());
@@ -99,16 +104,25 @@ public class Klick extends Canvas implements Runnable{
 
         @Override
         public void mouseMoved(MouseEvent e) {
+
         }
     }
+
 
     public class MyMouseListener implements MouseListener {
 
         @Override
         public void mouseClicked(MouseEvent e) {
-            x=200;
-            y=200;
+            int mouseX = e.getX();
+            int mouseY = e.getY();
+            if (x <= mouseX && mouseX <= x+30)
+                if (y <= mouseY && mouseY <= y+30){
+                    x = (int) Math.floor(Math.random() * (550- 1 + 1) + 1);
+                    y = (int) Math.floor(Math.random() * (550- 1 + 1) + 1);
+
+            }
         }
+
 
         @Override
         public void mousePressed(MouseEvent e) {
