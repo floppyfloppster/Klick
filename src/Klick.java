@@ -1,12 +1,7 @@
-import com.sun.org.apache.bcel.internal.generic.NEW;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.awt.image.BufferStrategy;
-import java.util.Random;
-
-import static java.lang.Math.random;
 
 public class Klick extends Canvas implements Runnable{
     private BufferStrategy bs;
@@ -122,6 +117,11 @@ public class Klick extends Canvas implements Runnable{
 
             }
         }
+        public int Score()
+        {
+            Score(int)=
+        }
+
 
 
         @Override
