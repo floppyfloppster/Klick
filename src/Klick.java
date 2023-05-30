@@ -12,6 +12,8 @@ public class Klick extends Canvas implements Runnable{
 
     int x = 100;
     int y = 100;
+
+    int Score = 0;
     public Klick() {
         setSize(600,600);
         JFrame frame = new JFrame();
@@ -41,11 +43,14 @@ public class Klick extends Canvas implements Runnable{
     }
 
     public void draw(Graphics g) {
+        Font stringFont = new Font( "Comic Sans MS", Font.PLAIN, 34);
         g.clearRect(0,0,getWidth(),getHeight());
-    g.setColor(Color.red);
-    g.fillRect(x,y,30,30);
-
-    }
+        g.setColor(Color.yellow);
+        g.fillRect(x,y,30,30);
+        g.setColor(Color.black);
+        g.setFont(stringFont);
+        g.drawString("" + Score,300,40);
+        }
 
     private void update() {
     }
@@ -114,15 +119,10 @@ public class Klick extends Canvas implements Runnable{
                 if (y <= mouseY && mouseY <= y+30){
                     x = (int) Math.floor(Math.random() * (550- 1 + 1) + 1);
                     y = (int) Math.floor(Math.random() * (550- 1 + 1) + 1);
+                    Score +=1;
 
-            }
+                }
         }
-        public int Score()
-        {
-            Score(int)=
-        }
-
-
 
         @Override
         public void mousePressed(MouseEvent e) {
