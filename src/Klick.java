@@ -45,7 +45,7 @@ public class Klick extends Canvas implements Runnable{
     public void draw(Graphics g) {
         Font stringFont = new Font( "Comic Sans MS", Font.PLAIN, 34);
         g.clearRect(0,0,getWidth(),getHeight());
-        g.setColor(Color.yellow);
+        g.setColor(Color.red);
         g.fillRect(x,y,30,30);
         g.setColor(Color.black);
         g.setFont(stringFont);
